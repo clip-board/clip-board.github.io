@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+ <head>
+  <meta charset="utf-8">
+ </head>
+ <body>
+  <style>
+   body
+   {
+    font-family:monospace;
+    font-size:2.2vw;
+   }
+   td
+   {
+    vertical-align:top;
+    padding-right:2vw;
+   }
+  </style>
+  <div><b>Restaurants</b></div>
+  <div>&nbsp;</div>
+  <table id="content">   
+  </table>
+  <script>
+   const urls=
+   [
+    "https://www.tiktok.com/@lawandlunching/video/7433140898067696929",
+    "https://www.tiktok.com/@detourgourmand/video/7621642295078587670",
+    "https://www.tiktok.com/@carolinerivier/video/7596657188228042006",
+    "https://www.tiktok.com/@hunterfood.fr/video/7618603562297412867",
+    "https://www.tiktok.com/@le_u92/video/7621528053230947606",
+    "https://www.tiktok.com/@leparisdalexis/video/7615672909146754326",
+    "https://www.tiktok.com/@paname_in_my_belly/video/7621596712926235926",
+    "https://www.tiktok.com/@leparisdalexis/video/7596261009086582038",
+    "https://www.tiktok.com/@lestreetfoodist/video/7599271143178128662",
+    "https://www.tiktok.com/@leguideultime/video/7620871131800653089",
+    "https://www.tiktok.com/@leparisdalexis/video/7606388653228592406",
+    "https://www.tiktok.com/@paname_in_my_belly/video/7593022369925516566",
+    "https://www.tiktok.com/@paname_in_my_belly/video/7617033261172247830",
+    "https://www.tiktok.com/@paname_in_my_belly/video/7609611387525991713",
+    "https://www.tiktok.com/@paname_in_my_belly/video/7596252840423689495",
+    "https://www.tiktok.com/@paname_in_my_belly/video/7600859873290554646",
+    "https://www.tiktok.com/@leparisdalexis/video/7595255659336043798",
+    "https://www.tiktok.com/@viletele/video/7599764042835561750",
+    "https://www.tiktok.com/@chinchin_recettedemamie/video/7614184467229347094",
+    "https://www.tiktok.com/@globetrotter_restaurant/video/7596005829594189078",
+    "https://www.tiktok.com/@chinchin_recettedemamie/video/7609725557487455510",
+    "https://www.tiktok.com/@paname_in_my_belly/video/7595291806879862038",
+    "https://www.tiktok.com/@teodoranct/video/7593787221178600707",
+    "https://www.tiktok.com/@leparisdalexis/video/7597854184985120022",
+    "https://www.tiktok.com/@konbini/video/7595954467611102467",
+    "https://www.tiktok.com/@larryaupaysdesmerguez/video/7598856764129348866",
+    "https://www.tiktok.com/@leparisdalexis/video/7604757521064037654",
+    "https://www.tiktok.com/@paname_in_my_belly/video/7607494317069880609",
+    "https://www.tiktok.com/@voyageurgourmand/video/7617042610259086614",
+    "https://www.tiktok.com/@le.palais.du.bonh/video/7619689991777668374",
+    "https://www.tiktok.com/@2brotherfood/video/7619307235877063959",
+    "https://www.tiktok.com/@carolinerivier/video/7593403067974896918",
+    "https://www.tiktok.com/@laurentmariotte_officiel/video/7618226083653225751",
+    "https://www.tiktok.com/@leparisdalexis/video/7613814657438010646",
+    "https://www.tiktok.com/@leparisdalexis/video/7619755629183274262",
+    "https://www.tiktok.com/@on.ne.reviendra.pas/video/7588603114316582166",
+    "https://www.tiktok.com/@paname_in_my_belly/video/7620002887418055958",
+    "https://www.tiktok.com/@on.ne.reviendra.pas/video/7601956050471783702",
+    "https://www.tiktok.com/@1mecchill31/video/7618645289682881814",
+    "https://www.tiktok.com/@vito.video/video/7620003176409828630",
+    "https://www.tiktok.com/@labrezaguee/video/7595962858203106582",
+    "https://www.tiktok.com/@lafoodloveuse/video/7597869600591662358",
+    "https://www.tiktok.com/@panameafaim/video/7589742476093623574",
+    "https://www.tiktok.com/@leparisdalexis/video/7606017699428289814",
+    "https://www.tiktok.com/@orso.guidefr/video/7596259539196890390",
+    "https://www.tiktok.com/@bouillonchartier/video/7621243670443904278",
+    "https://lepetitvendome.fr/fr",
+   ]
+   
+   const content=document.getElementById("content")
+   
+   console.log(content)
+   
+   let n=0
+   
+   for(const v of urls)
+   {
+    n=n+1
+    
+    const tr=document.createElement("tr")
+    const td1=document.createElement("td")
+    const td2=document.createElement("td")    
+    const a=document.createElement("a")
+    const title=v.slice(8)
+    
+    td1.textContent=n
+    
+    a.href=v
+    a.target="_blank"
+    a.textContent=title
+    
+    td2.appendChild(a)
+    tr.appendChild(td1)
+    tr.appendChild(td2)
+    content.appendChild(tr)
+   }
+  </script>
+ </body>
+</html>
