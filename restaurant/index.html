@@ -8,12 +8,21 @@
    body
    {
     font-family:monospace;
-    font-size:2.2vw;
+    font-size:var(--size);
    }
    td
    {
     vertical-align:top;
-    padding-right:2vw;
+    padding-right:var(--size);
+   }
+   a
+   {
+    text-decoration:none;
+   }
+   a:hover
+   {
+    background:blue;
+    color:white
    }
   </style>
   <div><b>Restaurants</b></div>
@@ -21,6 +30,26 @@
   <table id="content">   
   </table>
   <script>
+   function is_phone()
+   {
+    const agent=navigator.userAgent.toLowerCase()
+    
+    if(agent.includes("android"))
+     return true
+     
+    if(agent.includes("iphone"))
+     return true
+     
+    return false
+   }
+
+   let html=document.documentElement
+
+   if(is_phone())
+    html.style.setProperty("--size","2vw")
+   else
+    html.style.setProperty("--size","4vw")
+   
    const urls=
    [
     "https://www.tiktok.com/@lawandlunching/video/7433140898067696929",
@@ -52,7 +81,7 @@
     "https://www.tiktok.com/@leparisdalexis/video/7604757521064037654",
     "https://www.tiktok.com/@paname_in_my_belly/video/7607494317069880609",
     "https://www.tiktok.com/@voyageurgourmand/video/7617042610259086614",
-    "https://www.tiktok.com/@le.palais.du.bonh/video/7619689991777668374",
+    "https://www.tiktok.com/@le.palais.du.bonh/video/7619689991777668374",
     "https://www.tiktok.com/@2brotherfood/video/7619307235877063959",
     "https://www.tiktok.com/@carolinerivier/video/7593403067974896918",
     "https://www.tiktok.com/@laurentmariotte_officiel/video/7618226083653225751",
@@ -71,6 +100,8 @@
     "https://www.tiktok.com/@bouillonchartier/video/7621243670443904278",
     "https://lepetitvendome.fr/fr",
    ]
+   
+   urls.sort()
    
    const content=document.getElementById("content")
    
