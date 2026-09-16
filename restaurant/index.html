@@ -49,7 +49,7 @@
    let html=document.documentElement
 
    if(is_phone())
-    html.style.setProperty("--size","6vw")
+    html.style.setProperty("--size","5vw")
    else
     html.style.setProperty("--size","2vw")
    
@@ -124,13 +124,15 @@
     parts.shift()
     parts.shift()
     
+    const title=parts.join("/")
+    
     if(parts[0].includes("tiktok"))
      parts.shift()
+     
+    let text=parts[0]
     
-    let title=parts[0]
-    
-    if(title[0]=="@")
-     title=title.slice(1)
+    if(text[0]=="@")
+     text=text.slice(1)
    
     td1.textContent=n
     td1.style.fontWeight="bold"
@@ -138,7 +140,8 @@
     
     a.href=v
     a.target="_blank"
-    a.textContent=title
+    a.title=title
+    a.textContent=text
     
     td2.appendChild(a)
     tr.appendChild(td1)
